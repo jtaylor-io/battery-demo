@@ -1,0 +1,44 @@
+{% block product_name %}
+<div
+  id="{{product.id}}"
+  class="flex flex-col bg-slate-200 hover:bg-teal-100 transition-colors ease-in-out rounded-lg content-center text-center basis-1/4 w-full h-72"
+  hx-get="/products"
+  hx-swap="outerHTML"
+>
+  <span class="py-1 uppercase font-bold"
+    ><a href="{{product.website}}" class="text-cyan-800 hover:text-cyan-600"
+      >{{product.name}}</a
+    ></span
+  >
+  <span class="px-1 text-xs text-slate-500 font-bold uppercase">Usages</span>
+  <div class="flex flex-col flex-wrap h-5/6 py-2">
+    {% for usage in product.usages %}
+    <span class="px-1 text-sm text-slate-600">{{usage}}</span>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %} {% block product_summary %}
+<div
+  id="toggle-{{product.id}}"
+  class="flex flex-col bg-slate-200 hover:bg-teal-100 transition-colors ease-in-out rounded-lg content-center text-center w-1/4 h-72 pb-2"
+  hx-get="/products"
+  hx-target="this"
+  hx-swap="outerHTML"
+  hx-headers='{"product-id": "{{product.id}}"}'
+>
+  <span class="py-1 uppercase font-bold"
+    ><a href="{{product.website}}" class="text-cyan-800 hover:text-cyan-600"
+      >{{product.name}}</a
+    ></span
+  >
+  <span class="px-1 text-xs text-slate-500 font-bold uppercase">Summary</span>
+  <div class="flex flex-col my-2 h-full w-full overflow-y-auto overflow-x-clip">
+    <p class="text-xs text-slate-600 h-full px-2 w-full">
+      {{product.description}}
+    </p>
+  </div>
+  <p class="text-xs uppercase text-slate-600">
+    <a href="{{product.website}}">more info</a>
+  </p>
+</div>
+{% endblock %}

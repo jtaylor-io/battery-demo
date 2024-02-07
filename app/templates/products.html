@@ -1,15 +1,49 @@
-{% extends "base.html" %} {% block content %}
-<section
-  id="body"
-  class="flex flex-col bg-slate-50 justify-center items-center max-w-screen-lg m-auto"
->
-  <div class="flex flex-col justify-center items-center py-8">
-    <h2 class="text-2xl leading-relaxed text-slate-800 uppercase">Products</h2>
-    <div id="main-info" class="flex flex-col px-24 py-4">
-      <p class="py-2">
-        You are at the PRODUCT PAGE of the site obsessed with POWER!
-      </p>
-    </div>
-  </div>
-</section>
+{% extends "base.html" %}
+
+{% block content %}
+    <section id="body" class="flex flex-col bg-slate-50 justify-center items-center max-w-screen-lg m-auto">
+        <div class="flex flex-col justify-center items-center py-8 min-w-full">
+            <!-- Using jinja2-fragments: can specify which items render based on what triggered the response -->
+            {% if not from_search %}
+            <h2 class="text-2xl leading-relaxed text-slate-800 uppercase">Products</h2>
+            <div id="main-info" class="flex flex-col px-24 py-6 text-center">
+                <p class="py-2">Take a look at our set of award-winning product offerings below. </p>
+                <p>Click on any card to get a small description of the product.</p>
+                <br/>
+                <p class="py-2">We currently stock {{products|length}} different products!</p>
+            </div>
+            {% else %}
+            <h2 class="text-2xl pb-8 leading-relaxed text-slate-800 uppercase">Search Results</h2>
+            {% endif %}
+
+            {% block product_cards %}
+            <div id="search-results" class="flex flex-rown gap-2 flex-wrap justify-center content-center text-center w-full">
+                {% if products %}
+                {% for product in products %}
+                <div id="{{product.id}}" class="flex flex-col bg-slate-200 hover:bg-teal-100 transition-colors ease-in-out rounded-lg content-center text-center basis-1/4 w-full h-72"
+                     hx-get="/products"
+                     hx-swap="outerHTML">
+                    <span class="py-1 uppercase font-bold"><a href="{{product.website}}" class="text-cyan-800 hover:text-cyan-400">{{product.name}}</a></span>
+                    <span class="px-1 text-xs text-slate-500 font-bold uppercase">Usages</span>
+                    <div class="flex flex-col flex-wrap h-5/6 py-2">
+                    {% for usage in product.usages %}
+                        <span class="px-1 text-sm text-slate-600">{{usage}}</span>
+                    {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+                {% else %}
+                <div class="flex flex-col justify-around bg-rose-200 transition-colors ease-in-out rounded-lg content-center text-center basis-1/4 w-full h-72">
+                    <span class="py-1 uppercase font-bold text-rose-600">Nothing Found</span>
+
+                    <div class="flex flex-col flex-wrap py-2">
+                        <span class="px-1 text-rose-600">Try Again</span>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+            {% endblock %}
+        </div>
+    </section>
 {% endblock %}
+

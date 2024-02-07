@@ -1,0 +1,49 @@
+{% extends "base.html" %} {% block content %}
+<section
+  id="body"
+  class="flex flex-col bg-slate-50 justify-center items-center max-w-screen-lg m-auto"
+>
+  <div class="h-full">
+    {% block details %} {% if product %}
+    <div
+      class="flex flex-col justify-center items-center py-8 odd:bg-slate-200 even:bg-slate-100"
+      hx-get="/detail/?doc_id={{next_id}}"
+      hx-trigger="revealed"
+      hx-swap="afterend"
+      hx-push-url="true"
+    >
+      <div class="basis-1">
+        <img
+          src="{{product.src_path}}"
+          class="rounded-lg bg-cover bg-center h-full"
+          alt="{{product.name}}"
+        />
+      </div>
+      <h4 class="text-2xl py-6 font-bold text-center">
+        <a href="{{product.website}}" class="text-cyan-900 hover:text-cyan-500"
+          >{{product.name}}</a
+        >
+      </h4>
+      <p class="text-slate-900 py-6 px-12">
+        <span class="text-sm uppercase">Usages:</span>
+        {% for usage in product.usages %}
+        <span class="px-1 text-sm text-slate-600">{{usage}}</span>
+        {% endfor %}
+      </p>
+      <p
+        class="mx-36 p-6 max-h-32 text-sm bg-slate-50 rounded-l-2xl text-slate-500 border border-slate-300 overflow-y-auto overflow-x-clip"
+      >
+        {{product.description}}
+      </p>
+      {% if product.website %}
+      <a
+        href="{{product.website}}"
+        class="px-4 py-2 text-cyan-700 hover:text-cyan-500"
+        >Check out product website</a
+      >
+      {% endif %}
+    </div>
+    {% endif %} {% endblock %}
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,77 @@
+{
+  "_default": {
+    "1": {
+      "description": "AA 2 Pack Duracell (1300mAh)",
+      "id": "1",
+      "name": "Duracell AA",
+      "src_path": "static/images/battery-duracell-aa.jpg",
+      "usages": ["camera", "children's toys", "remote controller"],
+      "website": "https://www.duracell.co.uk/"
+    },
+    "2": {
+      "description": "AA 2 Pack Linux (1100mGits)",
+      "id": "2",
+      "name": "Linux AA",
+      "src_path": "static/images/battery-linux-aa.jpg",
+      "usages": ["cattle prod", "k8s containers"],
+      "website": "https://www.linux.org/"
+    },
+    "3": {
+      "description": "CR2032 4 Pack (1100mAh)",
+      "id": "3",
+      "name": "GP CR2032",
+      "src_path": "static/images/battery-gp-cr2032.jpg",
+      "usages": ["car keys", "children's toys"],
+      "website": "https://uk.gpbatteries.com/"
+    },
+    "4": {
+      "description": "AA 2 Pack Duracell (1300mAh)",
+      "id": "4",
+      "name": "Duracell AA",
+      "src_path": "static/images/battery-duracell-aa.jpg",
+      "usages": ["camera", "children's toys", "remote controller"],
+      "website": "https://www.duracell.co.uk/"
+    },
+    "5": {
+      "description": "AA 2 Pack Linux (1100mGits)",
+      "id": "5",
+      "name": "Linux AA",
+      "src_path": "static/images/battery-linux-aa.jpg",
+      "usages": ["cattle prod", "k8s containers"],
+      "website": "https://www.linux.org/"
+    },
+    "6": {
+      "description": "CR2032 4 Pack (1100mAh)",
+      "id": "6",
+      "name": "GP CR2032",
+      "src_path": "static/images/battery-gp-cr2032.jpg",
+      "usages": ["car keys", "children's toys"],
+      "website": "https://uk.gpbatteries.com/"
+    },
+    "7": {
+      "description": "AA 2 Pack Duracell (1300mAh)",
+      "id": "7",
+      "name": "Duracell AA",
+      "src_path": "static/images/battery-duracell-aa.jpg",
+      "usages": ["camera", "children's toys", "remote controller"],
+      "website": "https://www.duracell.co.uk/"
+    },
+    "8": {
+      "description": "AA 2 Pack Linux (1100mGits)",
+      "id": "8",
+      "name": "Linux AA",
+      "src_path": "static/images/battery-linux-aa.jpg",
+      "usages": ["cattle prod", "k8s containers"],
+      "website": "https://www.linux.org/"
+    },
+    "9": {
+      "description": "CR2032 4 Pack (1100mAh)",
+      "id": "9",
+      "name": "GP CR2032",
+      "src_path": "static/images/battery-gp-cr2032.jpg",
+      "usages": ["car keys", "children's toys"],
+      "website": "https://uk.gpbatteries.com/"
+    }
+  }
+}
+

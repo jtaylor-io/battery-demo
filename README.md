@@ -10,6 +10,12 @@
 
 ## installation
 
+### setting up virtual env
+
+```
+python -m venv .venv
+```
+
 ### setting up webserver watch
 
 ```

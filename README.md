@@ -55,3 +55,11 @@ docker run -d -p 8000:80 battery-demo # adjust the port-mapping if you something
 ```
 
 #### open browser and navigate to `localhost:8000`
+
+# follow on resources
+
+## inspiration for the repo
+
+- [tech stack choices](https://www.youtube.com/watch?v=YUoflPpVLjQ)
+- [real world saas migration](https://htmx.org/essays/a-real-world-react-to-htmx-port/)
+- [htmx.org examples](https://htmx.org/examples/)

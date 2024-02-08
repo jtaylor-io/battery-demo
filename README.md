@@ -13,7 +13,13 @@
 ### setting up virtual env
 
 ```
-python -m venv .venv
+python -m venv .venv && source .venv/bin/activate
+```
+
+### load deps
+
+```
+python -m pip install -r requirements.txt
 ```
 
 ### setting up webserver watch
